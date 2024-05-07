@@ -8,7 +8,7 @@ let deck;
 // clear db and create new user before tests
 beforeAll(async () => {
   await db.sync({ force: true })
-  user = await Deck.create({ name: 'deck1' })
+  deck = await Deck.create({ name: 'deck1', xp: 20 })
 })
 
 // clear db after tests
@@ -19,6 +19,11 @@ describe('Deck', () => {
     expect(deck).toHaveProperty('id')
   })
 
-// add more tests
+  it('has correct properties assigned', async () => {
+    expect(deck.name).toBe('deck1');
+    expect(deck.xp).toBe(20);
+  })
+
+  // add tests for associations
 
 })

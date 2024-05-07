@@ -8,7 +8,7 @@ let attack;
 // clear db and create new user before tests
 beforeAll(async () => {
   await db.sync({ force: true })
-  user = await Attack.create({ title: 'attack1' })
+  attack = await Attack.create({ title: 'attack1', mojoCost: 50, staminaCost: 100 })
 })
 
 // clear db after tests
@@ -19,7 +19,13 @@ describe('Attack', () => {
     expect(attack).toHaveProperty('id')
   })
 
-// add more tests
+  it('has correct properties assigned', async () => {
+    expect(attack.title).toBe('attack1');
+    expect(attack.mojoCost).toBe(50);
+    expect(attack.staminaCost).toBe(100);
+  })
 
+  // add tests for associations
+  
 })
 

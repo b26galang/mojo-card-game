@@ -16,10 +16,8 @@ Card.belongsTo(Deck);
 
 // each Card may have many Attacks and each attack may belong to many Cards / many-to-many
 Card.hasMany(Attack);
-Card.belongstoMany(Attack, { through: 'cardAttacks' })
+Card.belongstoMany(Attack, { through: 'CardAttacks' })
 Attack.belongsToMany(Card, { through: 'CardAttacks' });
-
-
 
 // and then export them all below
 module.exports = { Attack, Card, Deck, User };

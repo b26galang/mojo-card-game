@@ -8,7 +8,7 @@ let card;
 // clear db and create new user before tests
 beforeAll(async () => {
   await db.sync({ force: true })
-  user = await Card.create({ name: 'card1' })
+  card = await Card.create({ name: 'card1', mojo: 10, stamina: 20, imgUrl: 'newImg' })
 })
 
 // clear db after tests
@@ -19,6 +19,13 @@ describe('Card', () => {
     expect(card).toHaveProperty('id')
   })
 
-// add more tests
+  it('has correct properties assigned', async () => {
+    expect(card.name).toBe('card1');
+    expect(card.mojo).toBe(10);
+    expect(card.stamina).toBe(20);
+    expect(card.imgUrl).toBe('newImg');
+  })
 
+  // add tests for associations
+  
 })
