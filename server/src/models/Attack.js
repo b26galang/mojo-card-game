@@ -3,7 +3,7 @@ const sequelize = require('../db/config');
 const { DataTypes } = require('sequelize');
 
 // use the define method to create our model(table)
-const Attack = sequelize.define('attack', {
+const Attack = sequelize.define('Attack', {
     title: {
         type: DataTypes.STRING,
         allowNull: false,
