@@ -3,7 +3,7 @@ const sequelize = require('../db/config');
 const { DataTypes } = require('sequelize');
 
 // use the define method to create our model(table)
-const Deck = sequelize.define('Deck', {
+const Deck = sequelize.define('deck', {
     name: {
         type: DataTypes.STRING,
         allowNull: false,
